@@ -36,7 +36,7 @@ export default (env: EnvVariables) => {
         shared: { // shared libs
             ...packageJson.dependencies,
             react: {
-                eager: true, // load at start options
+                eager: true,
                 requiredVersion: packageJson.dependencies['react'],
             },
             'react-router-dom': {

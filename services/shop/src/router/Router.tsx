@@ -1,14 +1,20 @@
+import { Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { App } from '@/components/App';
+import { LazyShop } from '@/pages/shop';
 
-const routers = [
+const routes = [
     {
         path: '/',
         element: <App/>,
-        children: []
+        children: [
+            {
+                path: '/shop',
+                element: <Suspense fallback="Loading..."><LazyShop/></Suspense>
+            },
+        ]
     },
 ]
+export const router = createBrowserRouter(routes);
 
-export const router = createBrowserRouter(routers);
-
-export default routers;
+export default routes;

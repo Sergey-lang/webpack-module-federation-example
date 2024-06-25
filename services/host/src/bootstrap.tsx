@@ -10,5 +10,4 @@ if (!root) {
 
 const container = createRoot(root);
 
-
 container.render(<RouterProvider router={router}/>)

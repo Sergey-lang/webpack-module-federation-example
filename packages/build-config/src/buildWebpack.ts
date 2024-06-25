@@ -22,9 +22,9 @@ export function buildWebpack(options: IBuildOptions): webpack.Configuration {
         },
         resolve: buildResolvers(options),
         devServer: isDev ? buildDevServer(options) : undefined,
-        optimization: {
-            runtimeChunk: 'single',
-        },
+        // optimization: {
+        //     runtimeChunk: 'single',
+        // },
         devtool: isDev && 'inline-source-map', // https://webpack.js.org/guides/development/#using-source-maps
     }
 }

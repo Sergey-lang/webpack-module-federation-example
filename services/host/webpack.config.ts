@@ -33,7 +33,7 @@ export default (env: EnvVariables) => {
     })
 
     config.plugins.push(new webpack.container.ModuleFederationPlugin({
-        name: 'host',
+        name: 'hostPlatformOrchestrator',
         filename: 'remoteEntry.js',
         remotes: {
             shop: `shop@${SHOP_REMOTE_URL}/remoteEntry.js`,

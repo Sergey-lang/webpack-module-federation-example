@@ -13,7 +13,11 @@ export function buildPlugins({mode, paths, analyzer, platform}: IBuildOptions): 
     const isProd = mode === 'production';
 
     const plugins: Configuration['plugins'] = [
-        new HtmlWebpackPlugin({template: paths.html, favicon: path.resolve(paths.public, 'favicon.ico')}),// https://webpack.js.org/concepts/#plugins
+        new HtmlWebpackPlugin({
+            template: paths.html,
+            favicon: path.resolve(paths.public, 'favicon.ico'),
+            publicPath: '/'
+        }),// https://webpack.js.org/concepts/#plugins
         new webpack.DefinePlugin({
             __PLATFORM__: JSON.stringify(platform),
         }), // https://webpack.js.org/plugins/define-plugin/
